@@ -5,7 +5,8 @@
 
 <xsl:template match="/">
 
-<xsl:apply-templates select="//article-meta"/>
+<!-- <xsl:apply-templates select="//article-meta"/> -->
+<xsl:apply-templates select="//body"/>
 
 
 </xsl:template>
@@ -38,6 +39,11 @@
         </xsl:if>
         
     </xsl:template>
+    
+<xsl:template match="//body">
+	<xsl:value-of select="." disable-output-escaping="yes" />
+</xsl:template>
+    
 
 
 </xsl:stylesheet>
